@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <main>
       <header className="flex justify-center pt-5 w-full">
-        <nav className="w-[90%] max-w-[1100px] px-9 py-5 bg-white/5 rounded-lg border-white/20 border backdrop-blur-lg mt-6">
+        <nav className="w-[90%] max-w-[1280px] px-9 py-5 bg-accent/40 rounded-lg border-accent border backdrop-blur-lg mt-6">
           <div className="flex justify-between items-center">
             <Link
               href="/"
               className="text-white text-2xl font-bold w-full max-w-3xs"
             >
-              MFR
+              M<span className="text-primary">FR</span>
             </Link>
             <div className="w-full max-w-3xs justify-end flex md:hidden">
               <Menu />
