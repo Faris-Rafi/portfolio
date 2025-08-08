@@ -48,6 +48,15 @@ export default function Home() {
           </div>
         </nav>
       </header>
+      <section className="flex justify-center items-center min-h-80 w-full pt-5">
+        <div className="max-w-[1280px] px-9 py-5 mt-6">
+          <div className="w-full ">
+            <h1 className="text-[3.75rem] font-bold text-center bg-gradient-to-r from-foreground to-primary inline-block bg-clip-text text-transparent">
+              Muhammad Faris Rafi
+            </h1>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
