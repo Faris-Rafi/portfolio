@@ -1,0 +1,54 @@
+import { Download, Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
+
+export default function NavigationBar() {
+  return (
+    <header className="flex justify-center pt-5 w-full">
+      <nav className="w-[90%] max-w-[1280px] px-9 py-5 bg-accent/40 rounded-lg border-accent border backdrop-blur-sm mt-6">
+        <div className="flex justify-between items-center">
+          <Link
+            href="/"
+            className="text-white text-2xl font-bold w-full max-w-3xs"
+          >
+            M<span className="text-primary">FR</span>
+          </Link>
+          <div className="w-full max-w-3xs justify-end flex md:hidden">
+            <Menu />
+          </div>
+          <div className="gap-8 hidden md:flex">
+            <Link href="/" className="text-white text-lg">
+              Home
+            </Link>
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-white duration-200  text-lg"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-white duration-200 text-lg"
+            >
+              About
+            </Link>
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-white duration-200 text-lg"
+            >
+              Contact
+            </Link>
+          </div>
+          <div className="w-full max-w-3xs justify-end hidden md:flex">
+            <Button
+              variant="outline"
+              className="hover:border-primary transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
+            >
+              Resume <Download />
+            </Button>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+}
