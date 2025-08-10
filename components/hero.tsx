@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.5 }}
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-fade-in [animation-delay:1s]"
+          className="mt-20 animate-fade-in [animation-delay:1s]"
         >
           <div className="flex flex-col items-center">
             <span className="text-sm text-muted-foreground mb-2">

@@ -42,6 +42,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --shadow-glow: var(--shadow-glow);
+  --shadow-border: var(--shadow-border);
 }
 
 :root {
