@@ -23,7 +23,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-foreground to-primary inline-block bg-clip-text text-transparent"
           >
             Muhammad Faris Rafi
@@ -31,7 +31,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 1, delay: 1 }}
             className="text-lg md:text-xl text-center mt-5"
           >
             Full-Stack Developer with a Passion for Front-End Excellence
@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1.2, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
           className="flex gap-6 justify-center mt-20 animate-fade-in [animation-delay:0.8s]"
         >

@@ -12,7 +12,7 @@ export default function NavigationBar() {
   const navbarItems: NavbarItem[] = [
     {
       name: "About",
-      link: "#",
+      link: "#about-section",
       isActive: false,
     },
     {
