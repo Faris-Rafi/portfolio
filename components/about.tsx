@@ -4,6 +4,10 @@ import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { motion } from "framer-motion";
 import moment from "moment";
+import { Card, CardContent, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { mySkills, Skill } from "@/lib/data";
+import { getLastDigitNumber } from "@/lib/utils";
 
 type CardItem = {
   name: string;
@@ -16,10 +20,10 @@ export default function About() {
 
   const dateExp = moment("20220601", "YYYYMMDD");
 
-  const lastDigitNumber =
-    contributionData < 999
-      ? contributionData.toString().slice(-1)
-      : contributionData.toString().slice(-2);
+  const skills: Skill[] = [...mySkills];
+
+  const lastDigitTechnology = getLastDigitNumber(skills.length);
+  const lastDigitContribution = getLastDigitNumber(contributionData);
 
   const cardItems: CardItem[] = [
     {
@@ -32,11 +36,15 @@ export default function About() {
     },
     {
       name: "Technologies",
-      count: "10",
+      count: (
+        skills.length - (lastDigitTechnology ? +lastDigitTechnology : 0)
+      ).toString(),
     },
     {
       name: "GitHub Contributions",
-      count: (contributionData - +lastDigitNumber).toString(),
+      count: (
+        contributionData - (lastDigitContribution ? +lastDigitContribution : 0)
+      ).toString(),
     },
   ];
 
@@ -87,6 +95,25 @@ export default function About() {
     getContributions();
   }, []);
 
+  const getTechnicalSkills = () => {
+    const grouped: { [group: string]: Skill[] } = {};
+
+    mySkills
+      .filter((skill) => skill.type != "Familiar With")
+      .map((skill) => {
+        if (!grouped[skill.type]) {
+          grouped[skill.type] = [];
+        }
+
+        grouped[skill.type].push({
+          name: skill.name,
+          type: skill.type,
+        });
+      });
+
+    return grouped;
+  };
+
   return (
     <section id="about-section" className="flex justify-center w-full">
       <div className="max-w-[1280px] w-full px-9 py-5 mt-20 mb-32">
@@ -134,18 +161,69 @@ export default function About() {
                 </>
               ) : (
                 cardItems.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col justify-center items-center gap-2 bg-accent border rounded-lg p-6 shadow-lg w-full"
-                  >
-                    <p className="text-primary text-3xl font-semibold">
-                      {item.count}+
-                    </p>
-                    <p>{item.name}</p>
-                  </div>
+                  <Card key={i}>
+                    <CardContent className="space-y-2">
+                      <p className="text-primary text-3xl font-semibold text-center">
+                        {item.count}+
+                      </p>
+                      <p className="text-center">{item.name}</p>
+                    </CardContent>
+                  </Card>
                 ))
               )}
             </div>
+          </div>
+        </motion.div>
+        <div className="w-full text-center mt-20">
+          <motion.h4
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: "all" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-xl md:text-2xl font-semibold"
+          >
+            Technical Skills
+          </motion.h4>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: "all" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col justify-center items-center w-full mt-10"
+        >
+          <div className="grid grid-cols-4 gap-8 w-full">
+            {Object.entries(getTechnicalSkills()).map(
+              ([groupType, skills], i) => (
+                <Card
+                  key={i}
+                  className="transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-[#004a4b]"
+                >
+                  <CardTitle className="px-8 pt-2">{groupType}</CardTitle>
+                  <CardContent className="space-x-1 space-y-2">
+                    {skills.map((skill, i) => (
+                      <Badge
+                        key={i}
+                        className="px-3 py-1 rounded-full"
+                        variant="muted"
+                      >
+                        {skill.name}
+                      </Badge>
+                    ))}
+                  </CardContent>
+                </Card>
+              )
+            )}
+          </div>
+          <div className="w-full mt-10">
+            <p>
+              <span className="font-bold">Also familiar with :</span>{" "}
+              {mySkills
+                .filter((skill) => skill.type == "Familiar With")
+                .map((skill, i) => (
+                  <span key={i}>{skill.name}, </span>
+                ))}
+            </p>
           </div>
         </motion.div>
       </div>

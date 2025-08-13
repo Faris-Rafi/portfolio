@@ -3,8 +3,10 @@ import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
-  variable: "--font-ibm-plex-sans",
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
   subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
 });
 
 export const metadata: Metadata = {
