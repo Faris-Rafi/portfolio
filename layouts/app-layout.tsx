@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export default function AppBackground({ children }: { children: ReactNode }) {
+export default function AppLayout({ children }: { children: ReactNode }) {
   return (
     <div className="relative isolate">
       <div className="absolute inset-0 -z-10 bg-[image:radial-gradient(60%_80%_at_50%_20%,#071C1C,#0d1117_80%)] min-h-screen max-h-screen" />

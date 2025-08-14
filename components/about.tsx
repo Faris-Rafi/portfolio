@@ -20,9 +20,7 @@ export default function About() {
 
   const dateExp = moment("20220601", "YYYYMMDD");
 
-  const skills: Skill[] = [...mySkills];
-
-  const lastDigitTechnology = getLastDigitNumber(skills.length);
+  const lastDigitTechnology = getLastDigitNumber(mySkills.length);
   const lastDigitContribution = getLastDigitNumber(contributionData);
 
   const cardItems: CardItem[] = [
@@ -37,7 +35,7 @@ export default function About() {
     {
       name: "Technologies",
       count: (
-        skills.length - (lastDigitTechnology ? +lastDigitTechnology : 0)
+        mySkills.length - (lastDigitTechnology ? +lastDigitTechnology : 0)
       ).toString(),
     },
     {
@@ -133,9 +131,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: "all" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex justify-center items-center w-full mt-20"
+          className="flex flex-col md:flex-row justify-center items-center w-full mt-20"
         >
-          <div className="grid grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <div className="flex flex-col justify-center items-center gap-4">
               <p>
                 My passion for web development ignited when I architected and
@@ -192,7 +190,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col justify-center items-center w-full mt-10"
         >
-          <div className="grid grid-cols-4 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
             {Object.entries(getTechnicalSkills()).map(
               ([groupType, skills], i) => (
                 <Card

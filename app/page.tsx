@@ -1,16 +1,16 @@
 import About from "@/components/about";
 import Hero from "@/components/hero";
 import NavigationBar from "@/components/navigation-bar";
-import AppBackground from "@/layouts/app-background";
+import AppLayout from "@/layouts/app-layout";
 
 export default function Home() {
   return (
-    <AppBackground>
+    <AppLayout>
       <NavigationBar />
       <main>
         <Hero />
         <About />
       </main>
-    </AppBackground>
+    </AppLayout>
   );
 }
