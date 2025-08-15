@@ -114,7 +114,7 @@ export default function About() {
 
   return (
     <section id="about-section" className="flex justify-center w-full">
-      <div className="max-w-[1280px] w-full px-9 py-5 mt-20 mb-32">
+      <div className="max-w-7xl w-full px-9 py-5 mt-20 mb-32">
         <div className="w-full text-center">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}

@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     <section className="flex justify-center items-center min-h-80 w-full pt-5">
-      <div className="max-w-[1280px] px-9 py-5 mt-20 mb-32">
+      <div className="max-w-7xl px-9 py-5 mt-20 mb-32">
         <div className="w-full text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -49,6 +49,7 @@ export default function Hero() {
               href={href}
               className="p-3 rounded-full border hover:border-primary transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:scale-110 group"
               aria-label={label}
+              target="_blank"
             >
               <Icon className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
