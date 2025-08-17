@@ -110,7 +110,7 @@ export default function ProjectDialog({
         </div>
 
         <DialogFooter>
-          {project?.site_url && !project?.isMaintenance ? (
+          {project?.site_url && project?.isAvailable ? (
             <Button
               className="mt-4"
               onClick={() => {
@@ -118,10 +118,6 @@ export default function ProjectDialog({
               }}
             >
               View Site
-            </Button>
-          ) : project?.site_url ? (
-            <Button variant="secondary" className="mt-4" disabled>
-              Under Maintenance
             </Button>
           ) : (
             <Button variant="secondary" className="mt-4" disabled>

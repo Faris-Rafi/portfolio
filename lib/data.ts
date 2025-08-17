@@ -13,14 +13,14 @@ export type Project = {
   site_url: string;
   repo_url: string;
   tech_stacks: string[];
-  isMaintenance: boolean;
+  isAvailable: boolean;
   type: string;
   images: string[];
 };
 
 export const mySkills: Skill[] = [
   { name: "TypeScript", type: "Front-End" },
-  { name: "JavaScript (ES6+)", type: "Front-End" },
+  { name: "JavaScript", type: "Front-End" },
   { name: "React", type: "Front-End" },
   { name: "Next.js", type: "Front-End" },
   { name: "Tailwind CSS", type: "Front-End" },
@@ -41,7 +41,7 @@ export const mySkills: Skill[] = [
 
 export const myProjects: Project[] = [
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "SAMUJI - School Assessment & Exam Management System",
     short_description:
       "A web-based and mobile exam platform designed specifically for the needs of schools in Indonesia.",
@@ -53,12 +53,12 @@ export const myProjects: Project[] = [
     site_url: "https://ujian.eksam.id",
     repo_url: "",
     tech_stacks: ["TypeScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: true,
+    isAvailable: false,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "BelajarPPPK - E-Learning Platform",
     short_description:
       "Website for learning services, tryouts, and tutoring to prepare for the Indonesian civil service (PPPK) test.",
@@ -70,12 +70,12 @@ export const myProjects: Project[] = [
     site_url: "https://belajarpppk.com/",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: true,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "IDCPNS - E-Learning Platform",
     short_description:
       "Website for learning services, tryouts, and tutoring to prepare for the Indonesian civil service (CPNS) test and civil service academy tests.",
@@ -87,12 +87,12 @@ export const myProjects: Project[] = [
     site_url: "https://idcpns.com/",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: true,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "BelajarPPPK - Admin & Content Management System",
     short_description:
       "A content management system built for BelajarPPPK Website.",
@@ -104,12 +104,12 @@ export const myProjects: Project[] = [
     site_url: "",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: true,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "IDCPNS - Admin & Content Management System",
     short_description:
       "A content management system built for IDCPNS Website.",
@@ -121,12 +121,12 @@ export const myProjects: Project[] = [
     site_url: "",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: false,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "EKSAM - Admin & Content Management System",
     short_description:
       "A content management system built for EKSAM Website.",
@@ -138,12 +138,12 @@ export const myProjects: Project[] = [
     site_url: "",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: false,
     type: "company",
     images: [],
   },
   {
-    id: Date.now() + Math.floor(Math.random() * 100),
+    id: Date.now() + Math.floor(Math.random() * 100000),
     title: "JURHAM - Stock Analysis & Trading Journal",
     short_description:
       "A full-stack FinTech application featuring a custom calculation engine and a personal trading journal to help investors track and analyze their performance.",
@@ -155,8 +155,59 @@ export const myProjects: Project[] = [
     site_url: "https://jurham.id",
     repo_url: "",
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
-    isMaintenance: false,
+    isAvailable: true,
     type: "company",
+    images: [],
+  },
+  {
+    id: Date.now() + Math.floor(Math.random() * 100000),
+    title: "Meetup Platform - First Next.js Application",
+    short_description:
+      "A foundational project I built to master the core features of Next.js, including server-side rendering (SSR), file-based routing, and deployment on Vercel.",
+    description:
+      "This Meetup application was my first hands-on project with the Next.js framework. The primary goal was to move beyond tutorials and gain practical, real-world experience in building a full, albeit simple, server-rendered React application from scratch.",
+    role: "Sole Developer",
+    role_description:
+      "I was responsible for the entire development process, from setting up the Next.js environment to building the UI components and deploying the final product.",
+    site_url: "https://nextjs-course-rosy-xi.vercel.app/",
+    repo_url: "https://github.com/Faris-Rafi/meetup-app-next-js",
+    tech_stacks: ["JavaScript", "Next.js", "Firebase"],
+    isAvailable: true,
+    type: "personal",
+    images: [],
+  },
+  {
+    id: Date.now() + Math.floor(Math.random() * 100000),
+    title: "Vanilla JS E-commerce Cart",
+    short_description:
+      "A classic e-commerce product page and cart functionality built with pure JavaScript, completed as a challenge from Frontend Mentor.",
+    description:
+      "This project is a solution to a popular challenge from Frontend Mentor, a platform that provides professional design specs for developers to build. The goal was to create a responsive and interactive product page with a fully functional shopping cart, using only fundamental web technologies: HTML, CSS, and pure JavaScript.",
+    role: "Sole Developer",
+    role_description:
+      "As a Frontend Mentor challenge, I was responsible for the entire implementation, from writing the semantic HTML structure to styling with CSS and programming all the interactive logic with JavaScript.",
+    site_url: "https://faris-rafi.github.io/product-list-with-cart-main_frontend-mentor/",
+    repo_url: "https://github.com/Faris-Rafi/product-list-with-cart-main_frontend-mentor",
+    tech_stacks: ["JavaScript"],
+    isAvailable: true,
+    type: "personal",
+    images: [],
+  },
+  {
+    id: Date.now() + Math.floor(Math.random() * 100000),
+    title: "Hotel Booking - Content Management System",
+    short_description:
+      "The full-stack administrative dashboard I developed for a team-based hotel booking platform, enabling staff to manage all site content and operations.",
+    description:
+      "As my first major project in web development, building a complete hotel booking and management solution. The system consists of a public-facing website for guest bookings and a comprehensive Content Management System (CMS) that I developed for hotel staff.",
+    role: "Sole Developer",
+    role_description:
+      "I was reponsible for entire application from the ground up using PHP and Vanilla JavaScript, this involved creating the entire front-end with Vanilla JavaScript, HTML, and CSS to provide an intuitive interface for staff, designing database schema and Building back-end logic with PHP to handle all functions.",
+    site_url: "",
+    repo_url: "https://github.com/Faris-Rafi/Hotel-Booking-System-Website",
+    tech_stacks: ["JavaScript", "PHP", "MySQL"],
+    isAvailable: false,
+    type: "personal",
     images: [],
   },
 ];
