@@ -123,7 +123,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-5xl font-semibold"
           >
-            About me
+            About Me
           </motion.h2>
         </div>
         <motion.div
