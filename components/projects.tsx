@@ -7,21 +7,47 @@ import { Placeholder } from "./ui/placeholder";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import ProjectDialog from "./project-dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { myProjects } from "@/lib/data";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function Projects() {
+  const [tab, setTab] = useState("company");
   const [projectId, setProjectId] = useState<number>(0);
   const [isProjectOpen, setProjectOpen] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(9);
+
+  const [windowWidth] = useWindowSize();
+
+  useEffect(() => {
+    if (windowWidth < 768) {
+      setItemsToShow(3);
+    } else if (windowWidth < 1024) {
+      setItemsToShow(6);
+    } else {
+      setItemsToShow(9);
+    }
+  }, [windowWidth]);
 
   const handleProjectOpen = (projectId: number) => {
     setProjectId(projectId);
     setProjectOpen(true);
   };
 
+  const handleShowMore = () => {
+    if (windowWidth < 768) {
+      setItemsToShow((prev) => prev + 3);
+    } else if (windowWidth < 1024) {
+      setItemsToShow((prev) => prev + 6);
+    } else {
+      setItemsToShow((prev) => prev + 9);
+    }
+  };
+
   const projectCards = (type: string) => {
     return myProjects
       .filter((project) => project.type == type)
+      .slice(0, itemsToShow)
       .map((project) => (
         <motion.div
           key={project.id}
@@ -32,7 +58,7 @@ export default function Projects() {
               opacity: 1,
             },
           }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="flex"
         >
           <Card
@@ -101,7 +127,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: "all" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-4xl md:text-5xl font-semibold"
           >
             Featured Projects
@@ -115,13 +141,21 @@ export default function Projects() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: "all" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <TabsList className="py-4">
-              <TabsTrigger value="company-projects" className="py-4 px-2">
+              <TabsTrigger
+                value="company-projects"
+                className="py-4 px-2"
+                onClick={() => setTab("company")}
+              >
                 Company Projects
               </TabsTrigger>
-              <TabsTrigger value="personal-projects" className="py-4 px-2">
+              <TabsTrigger
+                value="personal-projects"
+                className="py-4 px-2"
+                onClick={() => setTab("personal")}
+              >
                 Personal Projects
               </TabsTrigger>
             </TabsList>
@@ -133,14 +167,15 @@ export default function Projects() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.4,
+                    staggerChildren: 0.2,
                   },
                 },
               }}
               initial="hidden"
               whileInView="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid grid-cols-3 gap-8 mt-10 w-full"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full"
             >
               {projectCards("company")}
             </motion.div>
@@ -152,19 +187,29 @@ export default function Projects() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    staggerChildren: 0.4,
+                    staggerChildren: 0.2,
                   },
                 },
               }}
               initial="hidden"
               whileInView="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid grid-cols-3 gap-8 mt-10 w-full"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full"
             >
               {projectCards("personal")}
             </motion.div>
           </TabsContent>
         </Tabs>
+
+        {myProjects.filter((project) => project.type == tab).length >
+          itemsToShow && (
+          <div className="flex justify-center items-center mt-10">
+            <Button variant="outline" className="p-6" onClick={handleShowMore}>
+              Show More
+            </Button>
+          </div>
+        )}
       </div>
 
       <ProjectDialog

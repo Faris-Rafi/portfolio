@@ -120,7 +120,7 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: "all" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-4xl md:text-5xl font-semibold"
           >
             About Me
@@ -130,7 +130,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: "all" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="flex flex-col md:flex-row justify-center items-center w-full mt-20"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
@@ -177,7 +177,7 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: "all" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-xl md:text-2xl font-semibold"
           >
             Technical Skills
@@ -187,7 +187,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: "all" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="flex flex-col justify-center items-center w-full mt-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">

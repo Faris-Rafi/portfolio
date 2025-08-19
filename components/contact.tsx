@@ -23,7 +23,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: "all" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-4xl md:text-5xl font-semibold"
           >
             Contact Me
@@ -33,8 +33,8 @@ export default function Contact() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: "all" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-[3fr_1fr] items-center gap-4 mt-20"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="grid md:grid-cols-[3fr_1fr] items-center gap-4 mt-20"
         >
           <Card>
             <CardHeader>
@@ -45,7 +45,7 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="flex flex-col gap-2">
                   <Label htmlFor="fullName">Name</Label>
                   <Input
@@ -85,7 +85,12 @@ export default function Contact() {
             <h4 className="text-2xl font-bold text-center mb-10">
               Or Reach Me Directly
             </h4>
-            <Card className="transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-[#004a4b] cursor-pointer mb-6">
+            <Card
+              className="transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-[#004a4b] cursor-pointer mb-6"
+              onClick={() => {
+                window.open("mailto:farisrafi048@gmail.com", "_blank");
+              }}
+            >
               <CardContent className="flex items-center gap-4">
                 <Mail />
                 <div className="flex flex-col">
@@ -94,7 +99,15 @@ export default function Contact() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-[#004a4b] cursor-pointer mb-6">
+            <Card
+              className="transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-[#004a4b] cursor-pointer mb-6"
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/muhammad-faris-rafi-230a2022b/",
+                  "_blank"
+                );
+              }}
+            >
               <CardContent className="flex items-center gap-4">
                 <Linkedin />
                 <div className="flex flex-col">
