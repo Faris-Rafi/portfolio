@@ -29,6 +29,7 @@ export const mySkills: Skill[] = [
   { name: "PHP", type: "Back-End" },
   { name: "MySQL", type: "Databases" },
   { name: "Firebase", type: "Databases" },
+  { name: "MongoDB", type: "Databases" },
   { name: "Git", type: "DevOps & Tooling" },
   { name: "GitHub", type: "DevOps & Tooling" },
   { name: "Vercel", type: "DevOps & Tooling" },
@@ -55,7 +56,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["TypeScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: false,
     type: "company",
-    images: [],
+    images: ['/projects/samuji/image-1.png', '/projects/samuji/image-2.png', '/projects/samuji/image-3.png', '/projects/samuji/image-4.png', '/projects/samuji/image-5.png', '/projects/samuji/image-6.jpg'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -72,7 +73,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: true,
     type: "company",
-    images: [],
+    images: ['/projects/belajarpppk/image-1.png', '/projects/belajarpppk/image-2.png', '/projects/belajarpppk/image-3.png', '/projects/belajarpppk/image-4.png', '/projects/belajarpppk/image-5.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -89,7 +90,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: true,
     type: "company",
-    images: [],
+    images: ['/projects/idcpns/image-1.png', '/projects/idcpns/image-2.png', '/projects/idcpns/image-3.png', '/projects/idcpns/image-4.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -106,7 +107,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: true,
     type: "company",
-    images: [],
+    images: ['/projects/cms-belajarpppk/image-1.png', '/projects/cms-belajarpppk/image-2.png', '/projects/cms-belajarpppk/image-3.png', '/projects/cms-belajarpppk/image-4.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -123,7 +124,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: false,
     type: "company",
-    images: [],
+    images: ['/projects/cms-idcpns/image-1.png', '/projects/cms-idcpns/image-2.png', '/projects/cms-idcpns/image-3.png', '/projects/cms-idcpns/image-4.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -140,7 +141,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: false,
     type: "company",
-    images: [],
+    images: ['/projects/cms-eksam/image-1.png', '/projects/cms-eksam/image-2.png', '/projects/cms-eksam/image-3.png', '/projects/cms-eksam/image-4.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -157,7 +158,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "React", "Laravel", "PHP", "MySQL"],
     isAvailable: true,
     type: "company",
-    images: [],
+    images: ['/projects/jurham/image-1.png', '/projects/jurham/image-2.png', '/projects/jurham/image-3.png', '/projects/jurham/image-4.png', '/projects/jurham/image-5.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -171,10 +172,10 @@ export const myProjects: Project[] = [
       "I was responsible for the entire development process, from setting up the Next.js environment to building the UI components and deploying the final product.",
     site_url: "https://nextjs-course-rosy-xi.vercel.app/",
     repo_url: "https://github.com/Faris-Rafi/meetup-app-next-js",
-    tech_stacks: ["JavaScript", "Next.js", "Firebase"],
+    tech_stacks: ["JavaScript", "Next.js", "MongoDB"],
     isAvailable: true,
     type: "personal",
-    images: [],
+    images: ['/projects/meetup/image-1.png', '/projects/meetup/image-2.png', '/projects/meetup/image-3.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -191,7 +192,7 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript"],
     isAvailable: true,
     type: "personal",
-    images: [],
+    images: ['/projects/e-commerce-cart/image-1.png', '/projects/e-commerce-cart/image-2.png'],
   },
   {
     id: Date.now() + Math.floor(Math.random() * 100000),
@@ -208,6 +209,6 @@ export const myProjects: Project[] = [
     tech_stacks: ["JavaScript", "PHP", "MySQL"],
     isAvailable: false,
     type: "personal",
-    images: [],
+    images: ['/projects/hotelbooking/image-1.png', '/projects/hotelbooking/image-2.png', '/projects/hotelbooking/image-3.png', '/projects/hotelbooking/image-4.png', '/projects/hotelbooking/image-5.png', '/projects/hotelbooking/image-6.png'],
   },
 ];

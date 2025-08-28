@@ -18,7 +18,8 @@ import { Placeholder } from "./ui/placeholder";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { myProjects } from "@/lib/data";
+import { myProjects, Project } from "@/lib/data";
+import Image from "next/image";
 
 export default function ProjectDialog({
   isOpen,
@@ -33,7 +34,9 @@ export default function ProjectDialog({
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  const project = myProjects.find((project) => project.id == projectId);
+  const project: Project = myProjects.filter(
+    (project) => project.id == projectId
+  )[0];
 
   useEffect(() => {
     if (!api) {
@@ -62,15 +65,30 @@ export default function ProjectDialog({
             className="px-4 pt-4"
           >
             <CarouselContent>
-              <CarouselItem>
-                <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
-              </CarouselItem>
-              <CarouselItem>
-                <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
-              </CarouselItem>
-              <CarouselItem>
-                <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
-              </CarouselItem>
+              {project?.images.length > 0 ? (
+                project?.images.map((image, i) => (
+                  <CarouselItem key={image}>
+                    <Image
+                      src={image}
+                      alt={`project-screenshot-${i + 1}`}
+                      width={500}
+                      height={208}
+                    />
+                  </CarouselItem>
+                ))
+              ) : (
+                <>
+                  <CarouselItem>
+                    <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
+                  </CarouselItem>
+                </>
+              )}
             </CarouselContent>
           </Carousel>
           <div className="flex justify-center items-center gap-2">

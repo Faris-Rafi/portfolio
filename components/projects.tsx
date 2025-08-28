@@ -10,6 +10,7 @@ import ProjectDialog from "./project-dialog";
 import { useEffect, useState } from "react";
 import { myProjects } from "@/lib/data";
 import useWindowSize from "@/hooks/useWindowSize";
+import Image from "next/image";
 
 export default function Projects() {
   const [tab, setTab] = useState("company");
@@ -52,11 +53,8 @@ export default function Projects() {
         <motion.div
           key={project.id}
           variants={{
-            hidden: { y: 20, opacity: 0 },
-            visible: {
-              y: 0,
-              opacity: 1,
-            },
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="flex"
@@ -66,7 +64,16 @@ export default function Projects() {
             onClick={() => handleProjectOpen(project.id)}
           >
             <CardContent className="flex flex-col flex-grow h-full">
-              <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
+              {project.images[0] ? (
+                <Image
+                  src={project.images[0]}
+                  alt="project-thumbnail"
+                  width={500}
+                  height={208}
+                />
+              ) : (
+                <Placeholder className="border border-black stroke-black dark:stroke-neutral-100/20 w-full h-52" />
+              )}
               <div className="flex-grow">
                 <p className="my-2 font-bold">{project.title}</p>
                 <small className="text-muted-foreground">
@@ -173,7 +180,6 @@ export default function Projects() {
               }}
               initial="hidden"
               whileInView="visible"
-              animate="visible"
               viewport={{ once: true, amount: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full"
             >
@@ -193,7 +199,6 @@ export default function Projects() {
               }}
               initial="hidden"
               whileInView="visible"
-              animate="visible"
               viewport={{ once: true, amount: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full"
             >
